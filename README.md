@@ -68,7 +68,15 @@ Response: Sort value was updated in the redux store. But it was not re-render th
 
 **Customer 3:** When I sort by "Top", there are posts with only 28 votes ranking higher than posts with 180 votes!
 
+Fix: Flip the array order `[array[1], array[0]]`.
+
+Response: `sortBy` condition was wrong. It was supposed to flip the array in line `sortBy.js: 11`
+
 **Customer 4:** When I page through posts, although the posts are changing, the vote count in the top left corner does not match the total count of votes of the displayed posts.
+
+Fix: Make `fetchPosts` function async and await dispatch call of `fetchPosts(params)`.
+
+Response: `fetchPosts` is a Promise function that should be awaited to dispatch `recountVotes`.
 
 ## 🎉 You're Done 🎉
 
