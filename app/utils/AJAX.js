@@ -8,7 +8,6 @@ export function getSSOToken() {
 }
 
 export async function get(url, parameters) {
-  console.log("parameters", parameters)
   const params = {
     ...parameters,
     ssoToken: getSSOToken(),

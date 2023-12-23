@@ -37,7 +37,6 @@ export default class PostList extends Component {
 
   render() {
     const { error, pages, posts } = this.props;
-    console.log("pages", pages )
     if (error) {
       return (
         <div className="postList">
