@@ -8,7 +8,7 @@ export default function sortBy(array, key, descending = false) {
     if (bValue > aValue) {
       return array;
     }
-    return [array[0], array[1]];
+    return [array[1], array[0]];
   }
 
   const mid = Math.floor(length / 2);
