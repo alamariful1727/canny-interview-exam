@@ -56,13 +56,15 @@ For each of the following issues:
 
 **Customer 1:** When I open the application, my posts do not load and all I see is a 'server error'.
 
-Issue: Backend is looking for userData.name from SSOToken. But the token has key named 'nayme'.
-
 Fix: Change the condition to `!userData.nayme`. Best fix should be change the SSOToken in client side.  
 
 Response: SSOToken has wrong payload. Thats why backend could not authenticate the user request.
 
 **Customer 2:** When I click on "Top" or "Old", the selector does not update with my new selection.
+
+Fix: Change the `selector` and retrieve the value of the updated sort value.
+
+Response: Sort value was updated in the redux store. But it was not re-render the PageSort component on `sort` value change.
 
 **Customer 3:** When I sort by "Top", there are posts with only 28 votes ranking higher than posts with 180 votes!
 

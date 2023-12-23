@@ -24,7 +24,7 @@ const Options = [
 ];
 
 @connect(
-  ({ sort }) => ({ sort }),
+  ({ sort }) => ({ sort: sort.sort }),
   (dispatch) => ({
     changeSort: (sort) => {
       dispatch(changeSort(sort));
@@ -63,9 +63,7 @@ export default class PostSort extends Component {
       return null;
     }
 
-    const {
-      sort: { sort },
-    } = this.props;
+    const { sort } = this.props;
     const sorts = Options.map((option) => {
       const className = 'option' + (option.name === sort ? ' selected' : '');
       return (
@@ -87,9 +85,7 @@ export default class PostSort extends Component {
   };
 
   render() {
-    const {
-      sort: { sort },
-    } = this.props;
+    const { sort } = this.props;
     const option = Options.find((option) => option.name === sort);
     return (
       <div className="postSort">
